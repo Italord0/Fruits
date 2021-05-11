@@ -2,6 +2,7 @@ package com.italo.fruits.activities
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import androidx.recyclerview.widget.GridLayoutManager
 import com.italo.fruits.adapter.FruitAdapter
 import com.italo.fruits.databinding.ActivityMainBinding
@@ -40,5 +41,9 @@ class MainActivity : AppCompatActivity() {
             }
         }
         binding.rvFruits.layoutManager = layoutManager
+    }
+
+    fun onAddFruit(view: View) {
+
     }
 }
