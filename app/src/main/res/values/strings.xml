@@ -1,4 +1,8 @@
 <resources>
     <string name="app_name">Fruits</string>
     <string name="text_test">Text test</string>
+    <string name="fab_main" translatable="false">FAB Main</string>
+    <string name="iv_fruit_adapter" translatable="false">Imageview Fruit from adapter</string>
+    <string name="this_is_some_fruit">This is some fruit</string>
+    <string name="this_is_some_benefits_by_the_fruit">This is some benefits by the fruit</string>
 </resources>

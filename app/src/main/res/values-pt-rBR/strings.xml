@@ -2,4 +2,6 @@
 <resources>
     <string name="app_name">Frutas</string>
     <string name="text_test">Texto teste</string>
+    <string name="this_is_some_fruit">Esta é alguma fruta</string>
+    <string name="this_is_some_benefits_by_the_fruit">Estes são alguns benefícios da fruta</string>
 </resources>
