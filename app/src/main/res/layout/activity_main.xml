@@ -22,6 +22,6 @@
         app:backgroundTint="@color/orange_cesar"
         app:tint="@android:color/white"
         android:layout_height="wrap_content"
-        android:contentDescription="@string/fab_main" />
+        />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

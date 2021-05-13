@@ -17,8 +17,7 @@
             android:layout_margin="8dp"
             android:src="@mipmap/ic_launcher"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            android:contentDescription="@string/iv_fruit_adapter" />
+            app:layout_constraintTop_toTopOf="parent"/>
 
         <TextView
             android:id="@+id/tvFruitName"
@@ -40,7 +39,7 @@
             android:layout_marginHorizontal="8dp"
             android:ellipsize="end"
             android:lines="3"
-            android:text="@string/this_is_some_benefits_by_the_fruit_this_is_some_benefits_by_the_fruit_this_is_some_benefits_by_the_fruit_this_is_some_benefits_by_the_fruit_this_is_some_benefits_by_the_fruit"
+            android:text="@string/this_is_some_benefits_by_the_fruit"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@id/ivFruit"
             app:layout_constraintBottom_toBottomOf="@id/ivFruit"/>

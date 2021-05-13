@@ -6,9 +6,11 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import com.italo.fruits.R
 import com.italo.fruits.databinding.ItemFruitBinding
 import com.italo.fruits.model.Fruit
+import java.io.File
 
 class FruitAdapter(private val context: Context,
                     private val fruits: List<Fruit>,
@@ -32,6 +34,9 @@ class FruitAdapter(private val context: Context,
         //TODO : COLOCAR IMAGEM DA FRUTA PASSANDO O PATH DA IMAGEM
         holder.tvFruitName.text = name
         holder.tvFruitBenefits.text = benefits
+
+        Glide.with(context).load(File(image!!)).into(holder.ivFruit);
+
     }
 
     class ViewHolder(itemView: ItemFruitBinding): RecyclerView.ViewHolder(itemView.root) {

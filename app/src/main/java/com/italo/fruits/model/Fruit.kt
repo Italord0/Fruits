@@ -1,7 +1,9 @@
 package com.italo.fruits.model
 
-import java.io.Serializable
+import android.os.Parcelable
+import kotlinx.parcelize.Parcelize
 
-data class Fruit(var name: String?, var benefits: String?, var image: String?) : Serializable {
+@Parcelize
+data class Fruit(var name: String?, var benefits: String?, var image: String?) : Parcelable {
 
 }

@@ -4,4 +4,18 @@
     <string name="text_test">Texto teste</string>
     <string name="this_is_some_fruit">Esta é alguma fruta</string>
     <string name="this_is_some_benefits_by_the_fruit">Estes são alguns benefícios da fruta</string>
+    <string name="create_a_fruit">Criar uma fruta</string>
+    <string name="fruit_name">Nome da fruta</string>
+    <string name="fruit_benefits">Benefícios da fruta</string>
+    <string name="save_fruit">Salvar fruta</string>
+    <string name="image_canceled">Imagem cancelada</string>
+    <string name="select_a_picture">Selecione uma imagem</string>
+    <string name="fruit_not_created">Fruta não criada</string>
+    <string name="remove_fruit">Remover fruta</string>
+    <string name="atention">Atenção</string>
+    <string name="would_you_like_to_remove_the_fruit">Você quer remover a fruta?</string>
+    <string name="yes">Sim</string>
+    <string name="no">Não</string>
+    <string name="operation_canceled">Operação cancelada</string>
+    <string name="please_fill_all_the_fields_correctly">Por favor preencha os campos corretamente</string>
 </resources>
