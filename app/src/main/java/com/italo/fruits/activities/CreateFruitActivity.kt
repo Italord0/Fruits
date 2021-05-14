@@ -26,6 +26,7 @@ class CreateFruitActivity : AppCompatActivity() {
         binding = ActivityCreateFruitBinding.inflate(layoutInflater)
         val view = binding.root
         setContentView(view)
+        supportActionBar?.setTitle(R.string.create_a_fruit)
     }
 
     fun onSelectImage(view: View) {
