@@ -60,6 +60,7 @@ class CreateFruitActivity : AppCompatActivity() {
             val file =
                 File(getExternalFilesDir("fruit_images"), System.currentTimeMillis().toString())
             val fruit = Fruit(
+                0,
                 binding.tilFruitName.editText?.text.toString(),
                 binding.tilFruitBenefits.editText?.text.toString(),
                 file.absolutePath

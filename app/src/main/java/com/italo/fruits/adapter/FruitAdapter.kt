@@ -12,9 +12,11 @@ import com.italo.fruits.databinding.ItemFruitBinding
 import com.italo.fruits.model.Fruit
 import java.io.File
 
-class FruitAdapter(private val context: Context,
-                    private val fruits: List<Fruit>,
-                    private val callback: (Fruit) -> Unit) : RecyclerView.Adapter<FruitAdapter.ViewHolder>() {
+class FruitAdapter(
+    private val context: Context,
+    private val fruits: List<Fruit>,
+    private val callback: (Fruit) -> Unit
+) : RecyclerView.Adapter<FruitAdapter.ViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.item_fruit, parent, false)
@@ -30,7 +32,7 @@ class FruitAdapter(private val context: Context,
     override fun getItemCount() = fruits.size
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        val (name, benefits , image) = fruits[position]
+        val (id, name, benefits, image) = fruits[position]
         //TODO : COLOCAR IMAGEM DA FRUTA PASSANDO O PATH DA IMAGEM
         holder.tvFruitName.text = name
         holder.tvFruitBenefits.text = benefits
@@ -39,8 +41,8 @@ class FruitAdapter(private val context: Context,
 
     }
 
-    class ViewHolder(itemView: ItemFruitBinding): RecyclerView.ViewHolder(itemView.root) {
-        val ivFruit : ImageView = itemView.ivFruit
+    class ViewHolder(itemView: ItemFruitBinding) : RecyclerView.ViewHolder(itemView.root) {
+        val ivFruit: ImageView = itemView.ivFruit
         val tvFruitName: TextView = itemView.tvFruitName
         val tvFruitBenefits: TextView = itemView.tvFruitBenefits
     }
