@@ -3,21 +3,23 @@ package com.italo.fruits.activities
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.GridLayoutManager
-import com.italo.fruits.R
 import com.italo.fruits.adapter.FruitAdapter
+import com.italo.fruits.dao.FruitDao
+import com.italo.fruits.database.FruitDatabase
 import com.italo.fruits.databinding.ActivityMainBinding
 import com.italo.fruits.model.Fruit
+import java.io.File
 
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
+    private lateinit var dao: FruitDao
 
-    var fruits = mutableListOf<Fruit>()
+    lateinit var fruits: MutableList<Fruit>
 
-    private val mFruitAdapter = FruitAdapter(this, fruits, this::onFruitClickListener)
+    lateinit var mFruitAdapter: FruitAdapter
 
     private fun onFruitClickListener(fruit: Fruit) {
         val intent = Intent(this, DetailFruitActivity::class.java)
@@ -27,16 +29,23 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        dao = FruitDatabase.getInstance(this).fruitDao()
+
         binding = ActivityMainBinding.inflate(layoutInflater)
         val view = binding.root
         setContentView(view)
         binding.animationView.setAnimation("animations/watermelon.json")
-        setupRecyclerview()
+        fruits = dao.getAll().toMutableList()
 
+        mFruitAdapter = FruitAdapter(this, fruits, this::onFruitClickListener)
+
+        setupRecyclerview()
     }
 
     override fun onResume() {
         super.onResume()
+
         if (fruits.isEmpty()) {
             binding.emptyView.visibility = View.VISIBLE
         } else {
@@ -44,20 +53,24 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
+    private fun fetchResults() {
+        fruits.clear()
+        fruits.addAll(dao.getAll().toMutableList())
+        mFruitAdapter.notifyDataSetChanged()
+    }
+
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
         if (requestCode == 1 && resultCode == RESULT_OK) {
             val fruit = data?.getParcelableExtra<Fruit>(Fruit::class.java.simpleName)
-            fruits.add(fruit!!)
-            println(fruits.size)
-            mFruitAdapter.notifyDataSetChanged()
-        } else if (requestCode == 2) {
+            dao.insert(fruit!!)
+        } else if (requestCode == 2 && resultCode == RESULT_OK) {
             val fruit = data?.getParcelableExtra<Fruit>(Fruit::class.java.simpleName)
-            fruits.remove(fruit)
-            mFruitAdapter.notifyDataSetChanged()
-        } else {
-            Toast.makeText(this, getString(R.string.operation_canceled), Toast.LENGTH_SHORT).show()
+            //DELETING IMAGE FILE FROM PRIVATE STORAGE
+            File(fruit?.image!!).delete()
+            dao.delete(fruit)
         }
+        fetchResults()
     }
 
     private fun setupRecyclerview() {
