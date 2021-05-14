@@ -18,4 +18,8 @@
     <string name="no">Não</string>
     <string name="operation_canceled">Operação cancelada</string>
     <string name="please_fill_all_the_fields_correctly">Por favor preencha os campos corretamente</string>
+    <string name="fruit_details">Detalhes da fruta</string>
+    <string name="you_have_not_created_a_fruit">Você não criou nenhuma fruta, para criar uma clique no botão \'+\'</string>
+    <string name="fab">FAB</string>
+    <string name="ivfruit">IVFRUIT</string>
 </resources>

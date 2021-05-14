@@ -14,7 +14,7 @@ import com.italo.fruits.model.Fruit
 import java.io.*
 
 
-abstract class CreateFruitActivity : AppCompatActivity() {
+class CreateFruitActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityCreateFruitBinding
     private val PICK_IMAGE = 1
@@ -65,12 +65,12 @@ abstract class CreateFruitActivity : AppCompatActivity() {
             )
             println(fruit)
             val os: OutputStream = BufferedOutputStream(FileOutputStream(file))
-            selectedImage.compress(Bitmap.CompressFormat.JPEG, 100, os)
+            selectedImage.compress(Bitmap.CompressFormat.JPEG, 50, os)
 
             val intent = Intent()
             intent.putExtra(Fruit::class.java.simpleName, fruit)
-            setResult(RESULT_OK, intent);
-            finish();
+            setResult(RESULT_OK, intent)
+            finish()
         } else {
             Toast.makeText(
                 this,

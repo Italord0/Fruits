@@ -22,6 +22,7 @@ class DetailFruitActivity : AppCompatActivity() {
         binding = ActivityDetailFruitBinding.inflate(layoutInflater)
         val view = binding.root
         setContentView(view)
+        supportActionBar?.setTitle(R.string.fruit_details)
         fruit = intent.getParcelableExtra(Fruit::class.java.simpleName)!!
         setupFruit(fruit)
     }
@@ -31,7 +32,7 @@ class DetailFruitActivity : AppCompatActivity() {
     }
 
     private fun setupFruit(fruit: Fruit?) {
-        Glide.with(this).load(File(fruit?.image!!)).into(binding.ivFruit);
+        Glide.with(this).load(File(fruit?.image!!)).into(binding.ivFruit)
         binding.tvFruitName.text = fruit.name
         binding.tvFruitBenefits.text = fruit.benefits
     }
@@ -44,8 +45,8 @@ class DetailFruitActivity : AppCompatActivity() {
         builder.setPositiveButton(getString(R.string.yes)) { _, _ ->
             val intent = Intent()
             intent.putExtra(Fruit::class.java.simpleName, fruit)
-            setResult(RESULT_OK, intent);
-            finish();
+            setResult(RESULT_OK, intent)
+            finish()
         }
 
         builder.setNegativeButton(getString(R.string.no)) { _, _ ->

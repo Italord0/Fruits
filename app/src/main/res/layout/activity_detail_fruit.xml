@@ -12,13 +12,15 @@
         android:layout_height="wrap_content">
 
         <ImageView
+            android:layout_margin="8dp"
             android:id="@+id/ivFruit"
             android:layout_width="match_parent"
             android:layout_height="250dp"
             android:src="@drawable/ic_launcher_background"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            android:contentDescription="@string/ivfruit" />
 
         <TextView
             android:id="@+id/tvFruitName"

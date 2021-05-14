@@ -20,9 +20,9 @@ class MainActivity : AppCompatActivity() {
     private val mFruitAdapter = FruitAdapter(this, fruits, this::onFruitClickListener)
 
     private fun onFruitClickListener(fruit: Fruit) {
-        val intent = Intent(this,DetailFruitActivity::class.java)
-        intent.putExtra(Fruit::class.java.simpleName,fruit)
-        startActivityForResult(intent,2)
+        val intent = Intent(this, DetailFruitActivity::class.java)
+        intent.putExtra(Fruit::class.java.simpleName, fruit)
+        startActivityForResult(intent, 2)
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -30,13 +30,23 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         val view = binding.root
         setContentView(view)
-
+        binding.animationView.setAnimation("animations/watermelon.json")
         setupRecyclerview()
+
+    }
+
+    override fun onResume() {
+        super.onResume()
+        if (fruits.isEmpty()) {
+            binding.emptyView.visibility = View.VISIBLE
+        } else {
+            binding.emptyView.visibility = View.GONE
+        }
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
-        if (requestCode == 1 && resultCode == RESULT_OK){
+        if (requestCode == 1 && resultCode == RESULT_OK) {
             val fruit = data?.getParcelableExtra<Fruit>(Fruit::class.java.simpleName)
             fruits.add(fruit!!)
             println(fruits.size)
@@ -62,6 +72,6 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun onAddFruit(view: View) {
-        startActivityForResult(Intent(this,CreateFruitActivity::class.java),1)
+        startActivityForResult(Intent(this, CreateFruitActivity::class.java), 1)
     }
 }

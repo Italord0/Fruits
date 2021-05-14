@@ -17,4 +17,8 @@
     <string name="no">No</string>
     <string name="operation_canceled">Operation canceled</string>
     <string name="please_fill_all_the_fields_correctly">Please fill all the fields correctly</string>
+    <string name="fruit_details">Fruit details</string>
+    <string name="you_have_not_created_a_fruit">You have not created a fruit, add a fruit using the \'+\' button</string>
+    <string name="fab">FAB</string>
+    <string name="ivfruit">IVFRUIT</string>
 </resources>
