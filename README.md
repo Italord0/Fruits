@@ -1,4 +1,4 @@
-<img src="" width="700">
+<img src="https://user-images.githubusercontent.com/32901063/118206851-c10e2f80-b439-11eb-8124-285d87ca1812.png" width="300">
 
 ## :rocket: Aplicativo Frutas ( Pós-Graduação C.E.S.A.R School )
 <p float="left">
