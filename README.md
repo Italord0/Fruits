@@ -22,3 +22,4 @@ Projeto para criação e listagem de Frutas
 ## 👨‍💻 Libs utilizadas
 - [Glide](https://github.com/bumptech/glide)
 - [Lootie](https://github.com/airbnb/lottie-android)
+- [Room](https://developer.android.com/training/data-storage/room)
