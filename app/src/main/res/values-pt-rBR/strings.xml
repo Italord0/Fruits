@@ -20,6 +20,9 @@
     <string name="please_fill_all_the_fields_correctly">Por favor preencha os campos corretamente</string>
     <string name="fruit_details">Detalhes da fruta</string>
     <string name="you_have_not_created_a_fruit">Você não criou nenhuma fruta, para criar uma clique no botão \'+\'</string>
-    <string name="fab">FAB</string>
     <string name="ivfruit">IVFRUIT</string>
+    <string name="fruit_deleted">Fruta excluída</string>
+    <string name="undo">DESFAZER</string>
+    <string name="fruit_already_registered">Fruta já registrada</string>
+    <string name="register">Registrar</string>
 </resources>

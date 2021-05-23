@@ -9,4 +9,5 @@
     <color name="white">#FFFFFFFF</color>
 
     <color name="orange_cesar">#f58220</color>
+    <color name="delete_red">#EF1B1B</color>
 </resources>

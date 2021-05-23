@@ -11,5 +11,6 @@ data class Fruit(
     @PrimaryKey(autoGenerate = true) var id: Int,
     var name: String?,
     var benefits: String?,
-    var image: String?
+    var image: String?,
+    var order: Int?
 ) : Parcelable

@@ -19,6 +19,11 @@
     <string name="please_fill_all_the_fields_correctly">Please fill all the fields correctly</string>
     <string name="fruit_details">Fruit details</string>
     <string name="you_have_not_created_a_fruit">You have not created a fruit, add a fruit using the \'+\' button</string>
-    <string name="fab">FAB</string>
+    <string name="fab" translatable="false">FAB</string>
     <string name="ivfruit">IVFRUIT</string>
+    <string name="fruit_deleted">Fruit deleted</string>
+    <string name="undo">UNDO</string>
+    <string name="ok" translatable="false">OK</string>
+    <string name="fruit_already_registered">Fruit already registered</string>
+    <string name="register">Register</string>
 </resources>
